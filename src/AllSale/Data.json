@@ -1,0 +1,38 @@
+
+
+[
+  {
+    "name":"Scotch Bonnet Pepper",
+    "img":"../../img/1.png"
+  },
+  {
+    "name":"Caribbean Spices",
+    "img":"/img/1.png"
+  },
+  {
+    "name":"Green Onion",
+    "img":""
+  },
+  {
+    "name":"Rice",
+    "img":""
+  },
+  {
+    "name":"Salmon",
+    "img":""
+  },
+  {
+    "name":"Oxtail Seasoning",
+    "img":""
+  },
+  {
+    "name":"Ram Goat Seasoning",
+    "img":""
+  },
+  {
+    "name":"Soy Sauce",
+    "img":""
+  }
+
+
+]
