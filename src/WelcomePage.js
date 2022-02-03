@@ -10,13 +10,12 @@ const WelcomePage = () => {
 			<MainHold>
 				<h3>Welcome to Santina African Caribben Supermarket!</h3>
 				<BoxHolder>
-					{" "}
 					<Boxing>
 						<Box>
-							<BsTruck />
+							<GiPriceTag />
 						</Box>
 						<TextHold>
-							<Text>Free Delievery</Text>
+							<Text>Retail and Wholesales</Text>
 							<Cont>
 								We offer Delievery At $1/km and over $100 worth of products
 							</Cont>
@@ -33,12 +32,13 @@ const WelcomePage = () => {
 							</Cont>
 						</TextHold>
 					</Boxing>
+
 					<Boxing>
 						<Box>
-							<GiPriceTag />
+							<BsTruck />
 						</Box>
 						<TextHold>
-							<Text>Best Price</Text>
+							<Text>Free Delievery</Text>
 							<Cont>
 								We offer Delievery At $1/km and over $100 worth of products
 							</Cont>
@@ -92,7 +92,11 @@ const Container = styled.div`
 	display: flex;
 	justify-content: center;
 	/* padding-bottom: 500px; */
-	/* margin-top: 100px; */
+	margin-top: 100px;
+
+	@media screen and (max-width: 760px) {
+		margin-top: 0px;
+	}
 `;
 
 const MainHold = styled.div`

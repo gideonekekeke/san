@@ -8,14 +8,11 @@ import { FaBookReader } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { GiCancel } from "react-icons/gi";
 import { fadeInLeft } from "react-animations";
-// import Radium, { StyleRoot } from "radium";
-// import Fade from "react-reveal/Fade";
-//
+
 import { bounce } from "react-animations";
+import { Link } from "react-router-dom";
 
 const bounceAnimation = keyframes`${fadeInLeft}`;
-
-// animate__fadeInLeft;
 
 const HeaderView = () => {
 	const [show, setShow] = React.useState(false);
@@ -24,36 +21,35 @@ const HeaderView = () => {
 		setShow(!show);
 	};
 
-	// const styles = {
-	// 	fadeInLeft: {
-	// 		animation: "x 1s",
-	// 		animationName: Radium.keyframes(fadeInLeft, "fadeInLeft"),
-	// 	},
-	// };
-
 	return (
 		<Container>
 			<Logo src={pic} />
 			<NavHold>
-				<span>
-					{" "}
-					<AiFillHome />
-					Home
-				</span>
-				<span>
-					<AiFillShop />
-					Shop
-				</span>
-				<span>
-					{" "}
-					<FaBookReader />
-					About
-				</span>
-				<span>
-					{" "}
-					<MdContactPhone />
-					Contact
-				</span>
+				<Link style={{ textDecoration: "none", color: "black" }} to='/'>
+					<span>
+						<AiFillHome />
+						Home
+					</span>
+				</Link>
+				<Link style={{ textDecoration: "none", color: "black" }} to='/shop'>
+					<span>
+						<AiFillShop />
+						Shop
+					</span>
+				</Link>
+				<Link style={{ textDecoration: "none", color: "black" }} to='/about'>
+					<span>
+						<FaBookReader />
+						About
+					</span>
+				</Link>
+				<Link style={{ textDecoration: "none", color: "black" }} to='/contact'>
+					<span>
+						{" "}
+						<MdContactPhone />
+						Contact
+					</span>
+				</Link>
 			</NavHold>
 			<SideHold>
 				{show ? (
@@ -72,20 +68,21 @@ const HeaderView = () => {
 							{" "}
 							<Logo src={pic} />
 						</div>
-						<a>
+						<a href='/'>
 							<AiFillHome style={{ fontSize: "19px" }} />
 							<span>Home</span>
 						</a>
 
-						<a>
+						<a href='/shop'>
 							<AiFillShop style={{ fontSize: "19px" }} />
 							<span>Shop</span>
 						</a>
-						<a>
+						<a href='/about'>
 							<FaBookReader style={{ fontSize: "19px" }} />
 							<span>About</span>
 						</a>
-						<a>
+
+						<a href='/contact'>
 							<MdContactPhone style={{ fontSize: "19px" }} />
 							<span>Contact</span>
 						</a>
@@ -170,6 +167,7 @@ const SubMenu = styled.div`
 			transition: all 350ms;
 			/* transform: scale(1); */
 			border-radius: 10px;
+			text-decoration: none;
 
 			:hover {
 				background-color: #a2ce73;

@@ -1,64 +1,63 @@
 import React from "react";
 import styled from "styled-components";
-// import img from "./img/1.png"
+import pic from "../DSlider/img/6.jpg";
 import { FcLike } from "react-icons/fc";
 import { RiSearchFill } from "react-icons/ri";
-// import Data from "./Data.json"
-import { Data } from "./Mydata";
-
-function Allsale() {
+const ShopPage = () => {
 	return (
 		<Container>
-			<Wrapper>
-				<Title>Our Product</Title>
+			{" "}
+			<HeroHold>
+				<ImageHold src={pic} />
+			</HeroHold>
+			<ContentHold>
+				<HeadHold>
+					<h4>
+						We found <span>10</span> products available for you
+					</h4>
+					<FilterHold>
+						<span>Sort By</span>
+						<select>
+							<option>Palm Oil</option>
+						</select>
+					</FilterHold>
+				</HeadHold>
+				<Card>
+					<CardHold>
+						<Bac className='im'>
+							<Sale className='sc'>Sales</Sale>
 
-				<Con>
-					{Data?.map((props) => (
-						<Card>
-							<CardHold>
-								<Bac className='im' imgUrl={props.img}>
-									<Sale className='sc'>Sales</Sale>
-
-									<Cover className='cover'>
-										<DivCon>
-											<Divvv>
-												<FcLike
-													style={{
-														color: "green",
-														fontSize: "25px",
-													}}
-												/>
-											</Divvv>
-											<Divvv>
-												<RiSearchFill
-													style={{
-														color: "#7dae3f",
-														fontSize: "25px",
-													}}
-												/>
-											</Divvv>
-										</DivCon>
-									</Cover>
-								</Bac>
-							</CardHold>
-							<Name>{props.name}</Name>
-							<Name1>100% fresh</Name1>
-						</Card>
-					))}
-				</Con>
-
-				<Con2>
-					{" "}
-					<ButtonCon>
-						<a href='/shop'>SEE LIST OF OUR PRODUCTS</a>
-					</ButtonCon>
-				</Con2>
-			</Wrapper>
+							<Cover className='cover'>
+								<DivCon>
+									<Divvv>
+										<FcLike
+											style={{
+												color: "green",
+												fontSize: "25px",
+											}}
+										/>
+									</Divvv>
+									<Divvv>
+										<RiSearchFill
+											style={{
+												color: "#7dae3f",
+												fontSize: "25px",
+											}}
+										/>
+									</Divvv>
+								</DivCon>
+							</Cover>
+						</Bac>
+					</CardHold>
+					<Name>food</Name>
+					<Name1>100% fresh</Name1>
+				</Card>
+			</ContentHold>
 		</Container>
 	);
-}
+};
 
-export default Allsale;
+export default ShopPage;
 
 const ButtonCon = styled.div`
 	height: 50px;
@@ -197,19 +196,13 @@ const Sale = styled.div`
 	font-weight: 500;
 `;
 
-const Image = styled.img`
-	width: 95%;
-	height: 95%;
-	object-fit: contain;
-	/* border-radius: 10px 10px 0px 0px; */
-`;
-
 const CardHold = styled.div`
 	width: 100%;
 	height: 350px;
 	background-color: #d9e8c5;
 	color: black;
 	position: relative;
+	background-image: red;
 
 	/* border-radius: 10px 10px 0px 0px; */
 
@@ -267,11 +260,6 @@ const Card = styled.div`
 	}
 `;
 
-const Container = styled.div`
-	height: auto;
-	margin-top: 80px;
-`;
-
 const Title = styled.div`
 height: 80px;
 width: 100%;
@@ -318,4 +306,112 @@ const Con2 = styled.div`
 	justify-content: center;
 	align-items: center;
 	/* background-color: green; */
+`;
+
+const HeadHold = styled.div`
+	margin-top: 70px;
+	display: flex;
+	/* align-items: center; */
+	justify-content: space-between;
+	width: 60%;
+	flex-wrap: wrap;
+
+	text-align: center;
+
+	span {
+		color: #7dae3f;
+		font-weight: bold;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 90%;
+		justify-content: center;
+		/* height: 0; */
+	}
+`;
+const FilterHold = styled.div`
+	margin-top: 10px;
+
+
+	select {
+		width: 200px;
+		height: 40px;
+		background-color: #f8f8f8;
+		border: none;
+		margin-left: 10px;
+		border-radius: 5px;
+        outline: #525824
+
+		:hover {
+			border-color: #525824;
+			cursor: pointer;
+		}
+
+       
+
+       
+	}
+`;
+
+const ContentHold = styled.div`
+	min-height: 80vh;
+	display: flex;
+	/* justify-content: center; */
+	flex-direction: column;
+	align-items: center;
+`;
+const Container = styled.div``;
+
+const ImageHold = styled.img`
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+`;
+
+const HeroHold = styled.div`
+	height: 300px;
+	width: 100%;
+
+	/* opacity: 0.4; */
+	position: relative;
+	@media screen and (max-width: 600px) {
+		height: 200px;
+	}
+
+	::before {
+		content: "";
+		position: absolute;
+		height: 300px;
+
+		width: 100%;
+		background-color: #7da63f;
+		opacity: 0.5;
+		@media screen and (max-width: 600px) {
+			height: 200px;
+		}
+	}
+
+	::after {
+		content: "Shop";
+		position: absolute;
+		height: 300px;
+		font-size: 40px;
+		font-weight: bold;
+		width: 100%;
+		bottom: 20px;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+
+		font-family: Raleway;
+
+		z-index: 10;
+
+		@media screen and (max-width: 600px) {
+			font-size: 30px;
+			height: 200px;
+		}
+	}
 `;

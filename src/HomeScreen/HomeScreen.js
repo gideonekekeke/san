@@ -11,8 +11,7 @@ const HomeScreen = () => {
 		<div>
 			<DSlider />
 			<WelcomePage />
-			<br />
-			<br />
+
 			<Allsale />
 			<FeaturePage />
 
