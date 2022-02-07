@@ -23,10 +23,9 @@ function DownPut() {
 						<br />
 						We offer Delievery At $1/km and over $100 worth of products
 					</Contentt>
-
-					<ButtonCon>
-						<a>SEE LIST OF OUR PRODUCTS</a>
-					</ButtonCon>
+					<Link style={{ textDecoration: "none" }} to='/contact'>
+						<ButtonCon>Contact Us</ButtonCon>
+					</Link>
 				</Allcom>
 			</Wrapper>
 		</Container>

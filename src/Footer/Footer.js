@@ -14,33 +14,33 @@ const Footer = () => {
 			<Container>
 				<Wrapper>
 					<ContentWrapper>
-						<ContentText1>Home</ContentText1>
+						<ContentText1 to='/'>Home</ContentText1>
 
-						<Direct1>How it Work</Direct1>
+						<Direct1 to='/about'>How it Work</Direct1>
 						<Direct2>Testimonia</Direct2>
 						<Direct3>Career</Direct3>
 						<Direct4>Investor</Direct4>
 					</ContentWrapper>
 					<ContentWrapper>
-						<ContentText1>About Us</ContentText1>
+						<ContentText1 to='/about'>About Us</ContentText1>
 
-						<Direct1>How it Work</Direct1>
+						<Direct1 to='/about'>How it Work</Direct1>
 						<Direct2>Testimonia</Direct2>
 						<Direct3>Career</Direct3>
 						<Direct4>Investor</Direct4>
 					</ContentWrapper>
 					<ContentWrapper>
-						<ContentText1>Shop</ContentText1>
+						<ContentText1 to='/shop'>Shop</ContentText1>
 
-						<Direct1>How it Work</Direct1>
+						<Direct1 to='/about'>How it Work</Direct1>
 						<Direct2>Testimonia</Direct2>
 						<Direct3>Career</Direct3>
 						<Direct4>Investor</Direct4>
 					</ContentWrapper>
 					<ContentWrapper>
-						<ContentText1>Contact</ContentText1>
+						<ContentText1 to='/contact'>Contact</ContentText1>
 
-						<Direct1>How it Work</Direct1>
+						<Direct1 to='/about'>How it Work</Direct1>
 						<Direct2>Testimonia</Direct2>
 						<Direct3>Career</Direct3>
 						<Direct4>Investor</Direct4>
@@ -78,9 +78,11 @@ const Logo = styled.img`
 	width: 150px;
 	object-fit: cover;
 `;
-const Direct1 = styled.div`
+const Direct1 = styled(Link)`
 	margin-top: 20px;
 	text-align: left;
+	text-decoration: none;
+	color: black;
 	/* width: 10rem; */
 	font-weight: normal;
 	&:hover {
@@ -131,6 +133,8 @@ const Direct5 = styled.div`
 
 const ContentWrapper = styled.div`
 	margin: 10px;
+	display: flex;
+	flex-direction: column;
 `;
 const ContentWrapperm = styled.div`
 	margin-left: 70px;
@@ -138,8 +142,10 @@ const ContentWrapperm = styled.div`
 		/* margin-left: 17px; */
 	}
 `;
-const ContentText1 = styled.div`
+const ContentText1 = styled(Link)`
 	font-weight: bold;
+	text-decoration: none;
+	color: black;
 `;
 const ContentText2 = styled.div`
 	font-weight: 300;
@@ -152,7 +158,7 @@ const ContentText2 = styled.div`
 const Container = styled.div`
 	/* height: 300px; */
 	width: 100%;
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	background: #f8f8f8;
 	color: white;
 	display: flex;

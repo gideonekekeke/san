@@ -79,6 +79,11 @@ const ClintInfo = styled.div`
 	height: auto;
 	display: flex;
 	flex-direction: column;
+
+	@media screen and (max-width: 800px) {
+		justify-content: center;
+		align-items: center;
+	}
 `;
 
 const ConTest = styled.div`
@@ -104,6 +109,7 @@ const Title = styled.div`
 		font-size: 20px;
 		padding-top: 10px;
 		height: 50px;
+		margin-top: 70px;
 	}
 `;
 
@@ -121,9 +127,10 @@ const Cont = styled.div`
 const Para = styled(Parallax)`
 	height: 350px;
 	position: relative;
+	background-image: url(${(props) => props.bgImage.src});
 
 	@media screen and (max-width: 800px) {
-		height: 250px;
+		height: 350px;
 	}
 `;
 

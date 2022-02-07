@@ -12,6 +12,7 @@ import img7 from "./img/7.jpg";
 import img8 from "./img/8.jpg";
 import img9 from "./img/9.jpg";
 import img10 from "./img/10.jpg";
+import { Link } from "react-router-dom";
 
 function DSlider() {
 	var settings = {
@@ -62,10 +63,15 @@ function DSlider() {
 							the best place where you can get Quality african products
 						</Litcon>
 						<AllBu>
-							<Button1 cl bt>
-								View Sales
-							</Button1>
-							<Button2 br>Shop all</Button2>
+							<Link style={{ textDecoration: "none" }} to='/about'>
+								<Button1 cl bt>
+									About Us
+								</Button1>
+							</Link>
+							<Link style={{ textDecoration: "none" }} to='/shop'>
+								{" "}
+								<Button2 br>Shop all</Button2>
+							</Link>
 						</AllBu>
 					</Connnt>
 				</Con1>

@@ -16,7 +16,6 @@ const HomeScreen = () => {
 			<FeaturePage />
 
 			<DownPut />
-			<br />
 		</div>
 	);
 };

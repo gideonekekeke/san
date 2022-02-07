@@ -5,6 +5,7 @@ import { FcLike } from "react-icons/fc";
 import { RiSearchFill } from "react-icons/ri";
 // import Data from "./Data.json"
 import { Data } from "./Mydata";
+import { Link } from "react-router-dom";
 
 function Allsale() {
 	return (
@@ -48,10 +49,10 @@ function Allsale() {
 				</Con>
 
 				<Con2>
-					{" "}
-					<ButtonCon>
-						<a href='/shop'>SEE LIST OF OUR PRODUCTS</a>
-					</ButtonCon>
+					<Link style={{ textDecoration: "none" }} to='/shop'>
+						{" "}
+						<ButtonCon>SEE LIST OF OUR PRODUCTS</ButtonCon>
+					</Link>
 				</Con2>
 			</Wrapper>
 		</Container>

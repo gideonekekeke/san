@@ -3,6 +3,7 @@ import styled from "styled-components";
 import pic from "../DSlider/img/6.jpg";
 import { FcLike } from "react-icons/fc";
 import { RiSearchFill } from "react-icons/ri";
+import { Data } from "../AllSale/Mydata";
 const ShopPage = () => {
 	return (
 		<Container>
@@ -12,52 +13,69 @@ const ShopPage = () => {
 			</HeroHold>
 			<ContentHold>
 				<HeadHold>
-					<h4>
-						We found <span>10</span> products available for you
-					</h4>
+					<h4>products available for you</h4>
 					<FilterHold>
 						<span>Sort By</span>
 						<select>
-							<option>Palm Oil</option>
+							<option>Pepper</option>
+							<option>Fish</option>
 						</select>
 					</FilterHold>
 				</HeadHold>
-				<Card>
-					<CardHold>
-						<Bac className='im'>
-							<Sale className='sc'>Sales</Sale>
+				<Con>
+					{Data?.map((props) => (
+						<Card>
+							<CardHold>
+								<Bac className='im' imgUrl={props.img}>
+									<Sale className='sc'>Sales</Sale>
 
-							<Cover className='cover'>
-								<DivCon>
-									<Divvv>
-										<FcLike
-											style={{
-												color: "green",
-												fontSize: "25px",
-											}}
-										/>
-									</Divvv>
-									<Divvv>
-										<RiSearchFill
-											style={{
-												color: "#7dae3f",
-												fontSize: "25px",
-											}}
-										/>
-									</Divvv>
-								</DivCon>
-							</Cover>
-						</Bac>
-					</CardHold>
-					<Name>food</Name>
-					<Name1>100% fresh</Name1>
-				</Card>
+									<Cover className='cover'>
+										<DivCon>
+											<Divvv>
+												<FcLike
+													style={{
+														color: "green",
+														fontSize: "25px",
+													}}
+												/>
+											</Divvv>
+											<Divvv>
+												<RiSearchFill
+													style={{
+														color: "#7dae3f",
+														fontSize: "25px",
+													}}
+												/>
+											</Divvv>
+										</DivCon>
+									</Cover>
+								</Bac>
+							</CardHold>
+							<Name>{props.name}</Name>
+							<Name1>100% fresh</Name1>
+						</Card>
+					))}
+				</Con>
 			</ContentHold>
 		</Container>
 	);
 };
 
 export default ShopPage;
+
+const Con = styled.div`
+	width: 80%;
+	height: auto;
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding-top: 30px;
+
+	@media screen and (max-width: 800px) {
+		width: 100%;
+	}
+`;
 
 const ButtonCon = styled.div`
 	height: 50px;
@@ -286,19 +304,7 @@ height: auto
 display: flex;
 flex-direction: column;
 `;
-const Con = styled.div`
-	width: 100%;
-	height: auto;
 
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding-top: 30px;
-
-	@media screen and (max-width: 800px) {
-		width: ;
-	}
-`;
 const Con2 = styled.div`
 	/* height: 100px; */
 	width: 100%;
@@ -359,6 +365,7 @@ const ContentHold = styled.div`
 	/* justify-content: center; */
 	flex-direction: column;
 	align-items: center;
+	padding-bottom: 50px;
 `;
 const Container = styled.div``;
 

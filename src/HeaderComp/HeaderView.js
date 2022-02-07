@@ -64,28 +64,44 @@ const HeaderView = () => {
 			{show ? (
 				<MainSide>
 					<SubMenu>
-						<div>
-							{" "}
-							<Logo src={pic} />
-						</div>
-						<a href='/'>
-							<AiFillHome style={{ fontSize: "19px" }} />
-							<span>Home</span>
-						</a>
+						<Logo src={pic} />
 
-						<a href='/shop'>
-							<AiFillShop style={{ fontSize: "19px" }} />
-							<span>Shop</span>
-						</a>
-						<a href='/about'>
-							<FaBookReader style={{ fontSize: "19px" }} />
-							<span>About</span>
-						</a>
-
-						<a href='/contact'>
-							<MdContactPhone style={{ fontSize: "19px" }} />
-							<span>Contact</span>
-						</a>
+						<Link
+							onClick={handleShow}
+							style={{ textDecoration: "none" }}
+							to='/'>
+							<div>
+								<AiFillHome style={{ fontSize: "19px" }} />
+								<span>Home</span>
+							</div>
+						</Link>
+						<Link
+							onClick={handleShow}
+							style={{ textDecoration: "none" }}
+							to='/#shop'>
+							<div>
+								<AiFillShop style={{ fontSize: "19px" }} />
+								<span>Shop</span>
+							</div>
+						</Link>
+						<Link
+							onClick={handleShow}
+							style={{ textDecoration: "none" }}
+							to='/about'>
+							<div>
+								<FaBookReader style={{ fontSize: "19px" }} />
+								<span>About</span>
+							</div>
+						</Link>
+						<Link
+							onClick={handleShow}
+							style={{ textDecoration: "none" }}
+							to='/contact'>
+							<div>
+								<MdContactPhone style={{ fontSize: "19px" }} />
+								<span>Contact</span>
+							</div>
+						</Link>
 					</SubMenu>
 				</MainSide>
 			) : null}
@@ -94,6 +110,8 @@ const HeaderView = () => {
 };
 
 export default HeaderView;
+
+const LogHold = styled.div``;
 
 const SideHold = styled.div`
 	display: none;
@@ -156,7 +174,7 @@ const SubMenu = styled.div`
 		z-index: 1000;
 		padding-top: 50px;
 		padding-left: 50px;
-		a {
+		div {
 			/* width: 50%; */
 			height: 40px;
 			display: flex;
